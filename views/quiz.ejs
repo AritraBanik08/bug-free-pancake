@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node.js Quiz</title>
+</head>
+<body>
+  <h1>Node.js Quiz</h1>
+  <div id="quiz-container"></div>
+  <script>
+    const quizContainer = document.getElementById('quiz-container');
+
+    fetch('/quiz')
+      .then(response => response.json())
+      .then(data => {
+        let html = '';
+        data.forEach((question, index1) => {
+          html += `
+            <h2>${question.question}</h2>
+            <ul>`;
+          question.options.forEach((option, index) => {
+            html += `<li><input type="radio" name="question_${index1}" <span class="math-inline"></span> ${option}</li>`;
+          });
+          html += `</ul>`;
+        });
+        html += '<button type="button" onclick="submitAnswers()">Submit Answers</button>';
+        quizContainer.innerHTML = html;
+      });
+
+    function submitAnswers() {
+      const answers = [];
+      const questions = document.querySelectorAll('input[type="radio"]:checked');
+      // questions.forEach(question => answers.push(question.value));
+      questions.forEach(question => answers.push(question.parentNode.textContent.trim()));
+
+      fetch('/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ answers })
+      })
+        .then(response => response.json())
+        .then(data => {
+          let feedbackHtml = '';
+          feedbackHtml += `<h2>Your Score: ${data.score} / ${data.feedback.length}</h2>`;
+          data.feedback.forEach(feedback => {
+            if (feedback.correct) {
+              feedbackHtml += '<p>Correct!</p>';
+            } else {
+            //   feedbackHtml += `<p>Incorrect. Correct answer
+                feedbackHtml += `<p>Incorrect. Correct answer: ${feedback.correctAnswer}</p>`;
+            }
+          });
+          quizContainer.innerHTML = feedbackHtml;
+        });
+    }
+  </script>
+</body>
+</html>

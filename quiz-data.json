@@ -1,0 +1,103 @@
+[
+    {
+      "question": "What is the primary function of Node.js?",
+      "options": [
+        "A web server",
+        "A web browser",
+        "A database management system",
+        "A desktop application framework"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What is the concept of an event loop in Node.js?",
+      "options": [
+        "A mechanism for handling asynchronous operations",
+        "A way to structure code into modules",
+        "A library for making network requests",
+        "A method for defining server routes"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Which of the following is NOT a valid data type in JavaScript?",
+      "options": [
+        "String",
+        "Number",
+        "Boolean",
+        "Object"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "What keyword is used to declare a variable in JavaScript?",
+      "options": [
+        "var",
+        "let",
+        "const",
+        "All of the above"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "How do you access an element with the ID \"myElement\" in the DOM using JavaScript?",
+      "options": [
+        "document.getElementById(\"myElement\")",
+        "document.getElementByClass(\"myElement\")",
+        "document.querySelector(\"#myElement\")",
+        "document.getElement(\"myElement\")"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What is the purpose of a function in JavaScript?",
+      "options": [
+        "To group a reusable block of code",
+        "To define a variable",
+        "To loop through an array",
+        "To create an object"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What does the following code snippet print to the console? \nconsole.log(typeof(10));",
+      "options": [
+        "String",
+        "Number",
+        "Boolean",
+        "Object"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What is the difference between `==` and `===` operators in JavaScript?",
+      "options": [
+        "There is no difference.",
+        "`==` checks for loose equality (value might be the same after conversion), `===` checks for strict equality (value and type must be the same)",
+        "`==` is used for assignment, `===` is used for comparison.",
+        "`==` is for numbers, `===` is for strings."
+      ],
+      "answer": 1
+    },
+    {
+      "question": "How do you loop through the elements of an array in JavaScript?",
+      "options": [
+        "for loop",
+        "while loop",
+        "do-while loop",
+        "None of the above"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What is the difference between an array and an object in JavaScript?",
+      "options": [
+        "Arrays can only hold numbers, objects can hold any data type.",
+        "Arrays are ordered collections, objects are unordered collections",
+        "Arrays are used for storing data, objects are used for defining functions.",
+        "There is no difference."
+      ],
+      "answer": 1
+    }
+]
+  
